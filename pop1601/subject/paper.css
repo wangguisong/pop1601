@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+	border: none;
+	padding-top: 44px;
+	padding-bottom: 44px;
+	
+	-webkit-text-size-adjust:none; /** 禁止文字自动调整大小，默认随着设备旋转文字大小会发生变化 **/
+	-webkit-tap-highlight-color: rgb(0,0,0,0); /** 去掉IOS上点击链接和文本框的默认半透明灰色覆盖层 **/
+	-webkit-touch-callout:none; /** 禁止长按弹出IOS底部菜单，img和a标签都要加 **/
+	-webkit-user-select: none; /** 禁止复制文本 **/
+	-webkit-overflow-scrolling: touch; /** 独立区域平滑滚动和回弹 **/
+}
+
+#content{
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+
+#content #subjectContent{
+	position: relative;
+}
+
+#content #subjectContent .page{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+
+
+
+

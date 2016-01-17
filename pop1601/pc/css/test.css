@@ -1,0 +1,206 @@
+
+
+/*开始考试页面*/
+#startDiv{
+	margin-top: 44px;
+	width: 100%;
+	background: #efefef;
+}
+#startDiv .title{
+	width: 100%;
+	height: 55px;
+	background: #ffffff;
+	border-bottom: 1px dashed #f5af36;
+	line-height: 55px;
+	text-align: center;
+	font-size:18px ;
+	color: #666666;
+}
+#startDiv .beginDiv{
+	width: 257px;
+	margin: 60px auto 0px auto;
+	height: 289px;
+	background: url(../img/runImg.png) no-repeat;
+	background-position: 0px 110px;
+}
+#startDiv .beginDiv .circle{
+	width:176px;
+	height: 176px;
+	border: 2px solid #f5af36;
+	border-radius: 176px;
+	margin-bottom: 30px;
+	background: #fafaf9;
+}
+#startDiv .beginDiv .circle img{
+	width:118px ;
+	height: 57px;
+	margin: 50px 0px 0px 30px;
+}
+#startDiv .beginDiv .stDiv{
+	width: 92px;
+	height: 38px;
+	margin-left: 45px;
+	position: relative;
+	overflow:hidden ;
+	margin-top: 50px;
+}
+/*开始考试按钮*/
+#startDiv .beginDiv .startBtn{
+	cursor: pointer;
+	width: 90px;
+	height: 36px;
+	background: #FFFFFF;
+	border: 1px solid #f5af36;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #f5af36;
+	line-height: 36px;
+	text-align: center;
+}
+/*go按钮*/
+#startDiv .beginDiv .goBtn{
+	width: 92px;
+	height: 38px;
+	background: #f5b13c;
+	border-radius: 5px;
+	position: absolute;
+	top:0px;
+	left:-92px;
+	font-size: 14px;
+	line-height: 36px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+/*显示分数*/
+#startDiv .showScore{
+	width: 400px;
+	margin: 60px auto 0px auto;
+	/*height: 289px;*/
+	background: url(../img/runImg.png) no-repeat;
+	background-position: 60px 110px;
+}
+#startDiv .showScore #indicatorContainer{
+	width: 180px;
+	height: 180px;
+	margin-bottom: 30px;
+	margin-left: 55px;
+	position: relative;
+}
+#startDiv .showScore #indicatorContainer .whiteCirlce{
+	width: 180px;
+	height: 180px;
+	background: url(../img/180X180.png) no-repeat;
+	position: absolute;
+	z-index: 0;
+	left: 0px;
+	top:0px;
+}
+#startDiv .showScore #indicatorContainer canvas{
+	position: absolute;
+	z-index: 23;
+}
+
+#startDiv .showScore #indicatorContainer span{
+	display: block;
+	width: auto;
+	color: #f5af36;
+	font-size: 24px;
+	position: absolute;
+	z-index: 22;
+	left: 80px;
+	top:120px;
+}
+#startDiv .showScore .btns{
+	width: 300px;
+	height: 36px;
+	font-size: 14px;
+	color: #f5af36;
+	line-height: 36px;
+	text-align: center;	
+	margin-top: 50px;
+	margin-left: 50px;
+}
+#startDiv .showScore .btns .wrongReportBtn{
+	cursor: pointer;
+	width: 90px;
+	height: 36px;
+	border: 1px solid #f5af36;
+	border-radius: 5px;
+	float: left;
+	margin-right:10px;
+	background: #FFFFFF;
+}
+#startDiv .showScore .btns .wrongReportBtn:hover{
+	background: #f5b13c;
+	color: #FFFFFF;
+}
+#startDiv .showScore .btns .wrongReportBtn:active{
+	color: #FFFFFF;
+	background: #f7a820;
+}
+#startDiv .showScore .btns .stDiv2{
+	cursor: pointer;
+	width: 92px;
+	height: 38px;
+	position: relative;
+	overflow:hidden ;
+	float: left;
+	margin-right:10px ;
+}
+#startDiv .showScore .btns .stDiv2 .goBtn2{
+	width: 92px;
+	height: 38px;
+	background: #f5b13c;
+	border-radius: 5px;
+	position: absolute;
+	top:0px;
+	left:-92px;
+	font-size: 14px;
+	line-height: 36px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#startDiv .showScore .btns .stDiv2 .startBtn2 {
+	width: 90px;
+	height: 36px;
+	border: 1px solid #f5af36;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #f5af36;
+	line-height: 36px;
+	text-align: center;
+	background: #FFFFFF;
+}
+/*试卷精析正常状态*/
+#startDiv .showScore .btns .testAny{
+	cursor: pointer;
+	width: 90px;
+	height: 36px;
+	border: 1px solid #f5af36;
+	border-radius: 5px;
+	float: left;
+	background: #FFFFFF;
+}
+/*试卷精析不可用状态*/
+#startDiv .showScore .btns .testAnyDisabled{
+	cursor: pointer;
+	width: 90px;
+	height: 36px;
+	color:#FFFFFF;
+	border: 1px solid #c5bca8;
+	border-radius: 5px;
+	float: left;
+	color: #c9beb4;
+	
+}
+
+#startDiv .showScore .btns .testAny:hover{
+	background: #f5b13c;
+	color: #FFFFFF;
+}
+#startDiv .showScore .btns .testAny:active{
+	color: #FFFFFF;
+	background: #f7a820;
+}

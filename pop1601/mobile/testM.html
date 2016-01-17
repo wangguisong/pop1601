@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<title>考试页面</title>
+<link rel="stylesheet" href="css/mobile.css" />
+<link rel="stylesheet" href="css/mobile2.css" />
+<link rel="stylesheet" href="css/test.css" />
+<link rel="stylesheet" href="css/testM.css" />
+<link href="../subject/paper.css" rel="stylesheet" type="text/css"/>
+<link href="../subject/default.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.min.js" ></script>
+<script src="js/jqmd5.js"></script>
+
+<script src="../subject/jquery-form.js"></script>
+<script src="../subject/myTool.js"></script>
+<script src="../subject/hammer.min.js"></script>
+<script src="../subject/hsubject.js"></script>
+<script src="../subject/paper.js"></script>
+
+<!--<script src="js/mobile.js"></script>
+<script src="js/mobile2.js"></script>-->
+<script src="js/testM.js"></script>
+</head>
+	<body>
+		<div id="content">
+			<div id="subjectContent">
+			</div>
+		</div>
+		<div id="header">
+			<a id="close"></a>
+			<div id="title"></div>
+			<a id="btnTestWrong">错题再练</a>
+		</div>
+		<div id="footer">
+			<div id="pre" class="btndiv">
+				<a id="btnPre"></a>
+			</div>
+			<div id="next" class="btndiv">
+				<a id="btnNext"></a>
+				<a id="btnSubmit">提交</a>
+			</div>
+			<div id="labPage">0 / 0</div>
+			<a id="btnCheck">检查</a>
+		</div>
+		<div id="bigImgMaskdiv"></div>
+		<script>
+			$("#btnPre").hide();
+	        $("#btnNext").hide();
+	        $("#btnSubmit").hide();
+		</script>
+	</body>
+</html>

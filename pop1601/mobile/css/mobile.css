@@ -1,0 +1,300 @@
+body{
+	-webkit-text-size-adjust:none; /** 禁止文字自动调整大小，默认随着设备旋转文字大小会发生变化 **/
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /** 去掉IOS上点击链接和文本框的默认半透明灰色覆盖层 **/
+	-webkit-touch-callout:none; /** 禁止长按弹出IOS底部菜单，img和a标签都要加 **/
+	-webkit-user-select: none; /** 禁止复制文本 **/
+	-webkit-overflow-scrolling: touch; /** 独立区域平滑滚动和回弹 **/
+}
+
+input{
+	-webkit-appearance: none;
+}
+
+p{
+	margin: 0px;
+	padding: 5px;
+}
+
+.clear{
+	clear: both;
+}
+
+.judgeContent{
+	font-size: 20px;
+	color: #666666;
+	padding: 6px;
+}
+
+.chooseOpImg{
+	position: absolute;
+	top: 15px;
+	left: 0px;
+	width: 24px;
+	height: 24px;
+}
+
+.chooseOp{
+	display: inline-block;
+	border: solid 1px #cccccc;
+	border-radius: 5px;
+	background: #ffffff;
+	width: 90%;
+	max-width: 480px;
+}
+.chooseOp font{
+	color: #666666;
+}
+
+.chooseOpSelect{
+	display: inline-block;
+	border: solid 1px #cccccc;
+	border-radius: 5px;
+	background: #76cb8a;
+	width: 90%;
+	max-width: 480px;
+}
+.chooseOpSelect font{
+	color: #ffffff;
+}
+
+.chooseOpWrong{
+	display: inline-block;
+	border: solid 1px #cccccc;
+	border-radius: 5px;
+	background: #f88a8a;
+	width: 90%;
+	max-width: 480px;
+}
+.chooseOpWrong font{
+	color: #ffffff;
+}
+
+.blank{
+	outline: none;
+	background: #FFFFFF;
+	font-size: 18px;
+	color: #666666;
+	font-family: verdana;
+	border: solid 1px #96c745;
+	border-radius: 5px;
+	padding: 10px;
+	display: block;
+	margin: 0 auto;
+}
+
+.specialBlank{
+    outline: none;
+	background: #FFFFFF;
+	font-size: 18px;
+	color: #666666;
+	font-family: verdana;
+	border: none;
+	border-radius: 0;
+	border-bottom: solid 2px #8b7ea4;
+	padding: 0px 10px;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.help{
+    padding: 10px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.dragfastblank{
+	border-radius: 5px;
+    background-color: #eeeeee;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+.dragfastblank:active{
+	background-color: #cfc6e0;
+}
+
+.dragfastblank2{
+	border-radius: 5px;
+    background-color: #fffdd3;
+    padding: 0px 5px;
+    margin-right: 5px;
+}
+.dragfastblank2:active{
+	background-color: #cfc6e0;
+}
+
+.dragfastblankSelect{
+	background-color: #645483;
+	color: #FFFFFF;
+	margin-right: 5px;
+}
+
+.dragfastoptioncon{
+    border: dashed 1px #cccccc;
+    background-color: #f0f1ec;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dragfastoption{
+    background-color: #96c745;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-family: times;
+}
+.dragfastoption:active{
+	background-color: #cfc6e0;
+}
+.dragfastoptionSelect{
+    background-color: #645483;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-family: times;
+    color: #FFFFFF;
+}
+
+.drag{
+    background-color: #96c745;
+}
+
+.sortop{
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 24px;
+    color: #666666;
+    font-family: times;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 44px;
+    line-height: 44px;
+    background: url(../subjectimgs/sortbg1.png) repeat-x;
+}
+.sortop:active{
+	background: url(../subjectimgs/sortbg2.png) repeat-x;
+}
+.sortopSelect{
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 24px;
+    color: #FFFFFF;
+    font-family: times;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 44px;
+    line-height: 44px;
+    background: url(../subjectimgs/sortbg3.png) repeat-x;
+}
+.sortopWrong{
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 24px;
+    color: #fb7575;
+    font-family: times;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 44px;
+    line-height: 44px;
+    background: url(../subjectimgs/sortbg2.png) repeat-x;
+}
+
+.sortCon{
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #eeeeee;
+    border-radius: 6px;
+}
+.sortCon:active{
+	background: #d3eda9;
+}
+.sortConSelect{
+	padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #96c745;
+    border-radius: 6px;
+}
+.sortConSelect font{
+	color: #FFFFFF;
+}
+.sortConWrong{
+	padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #fb7575;
+    border-radius: 6px;
+}
+.sortConWrong font{
+	color: #FFFFFF;
+}
+
+.h5CustomAudio{
+	width: 100%;
+	height: 50px;
+	background: #ffffff;
+	position: relative;
+}
+
+.h5CustomAudio .play{
+	display: block;
+	width: 50px;
+	height: 50px;
+	border: none;
+	background: url(../subjectimgs/btnPlay.png) no-repeat;
+	background-size: 50px 50px;
+	outline: none;
+	cursor: pointer;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.h5CustomAudio .process{
+	position: absolute;
+	height: 48px;
+	/*background: #eeecec;
+	border: solid 1px #e4e1e1;
+	border-radius: 48px;*/
+	left: 55px;
+	right: 0px;
+	top: 0px;
+}
+
+.h5CustomAudio .process .processBar{
+	background: #c3bab4;
+	height: 10px;
+	border-radius: 10px;
+	position: absolute;
+	top: 20px;
+	left: 16px;
+	right: 16px;
+}
+
+.h5CustomAudio .process .playedBar{
+	background: #ff9900;
+	width: 0px;
+	height: 10px;
+	border-radius: 10px;
+	position: absolute;
+	top: 20px;
+	left: 16px;
+}
+
+.h5CustomAudio .process .drag{
+	position: absolute;
+	top: 15px;
+	width: 20px;
+	height: 20px;
+	border: none;
+	background: url(../subjectimgs/audioDrag.png) no-repeat;
+	background-size: 20px 20px;
+	left: 8px;
+	outline: none;
+}

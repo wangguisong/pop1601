@@ -1,0 +1,232 @@
+body{
+	 margin:0 auto;
+	 padding:0;
+	 color:#666;
+	 font:12px verdana;
+	 -webkit-text-size-adjust:none; /** 禁止文字自动调整大小，默认随着设备旋转文字大小会发生变化 **/
+	 -webkit-tap-highlight-color: rgba(0,0,0,0); /** 去掉IOS上点击链接和文本框的默认半透明灰色覆盖层 **/
+	 -webkit-touch-callout:none; /** 禁止长按弹出IOS底部菜单，img和a标签都要加 **/
+	 -webkit-user-select: none; /** 禁止复制文本 **/
+	 -webkit-overflow-scrolling: touch; /** 独立区域平滑滚动和回弹 **/
+}
+
+a{
+	text-decoration: none;
+}
+
+ul, ol, li{
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+.hide{
+	display: none;
+}
+
+#header{
+	width: 100%;
+	/*border-bottom: solid 1px #1db5b0;*/
+	height: 44px;
+	background: #20c5bf;
+	position: fixed;
+	top: 0px;
+	z-index: 22;
+}
+
+#header #title{
+	padding: 0 10px;
+	line-height: 44px;
+	height: 44px;
+	/*text-align: center;*/
+	padding-left: 60px;
+	font-size: 18px;
+	color: #FFFFFF;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+#header #title span{
+	color: #007e7a;
+	font-weight: bolder;
+}
+#header #btnTestWrong{
+	display: block;
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	width: 81px;
+	height: 29px;
+	background: url(../images/btnTestWrong.png) no-repeat;
+	background-size: 81px 29px;
+	line-height: 29px;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-align: center;
+	text-indent: -6px;
+}
+#header #btnTestWrong:active{
+	background: url(../images/btnTestWrong2.png) no-repeat;
+	background-size: 81px 29px;
+}
+
+#header #close{
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 44px;
+	width: 50px;
+	background: url(../subjectimgs/btnBack1.png) no-repeat;
+	background-size: 50px 43px;
+}
+#header #close:active{
+	background: url(../subjectimgs/btnBack3.png) no-repeat;
+	background-size: 50px 43px;
+}
+
+#content{
+	width: 100%;
+	padding-bottom: 45px;
+	background: #ffffff;
+}
+
+#content h1{
+	color: #333333;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px 0px;
+	border-bottom: dashed 1px #998fa7;
+}
+
+#content #subjectContent{
+	position: relative;
+	left: 0px;
+}
+
+#footer{
+	width: 100%;
+	height: 44px;
+	background: #6bb30f;
+	position: fixed;
+	bottom: 0px;
+	border-top: solid 1px #6bb30f;
+}
+
+#footer .btndiv{
+	position: absolute;
+	height: 44px;
+	width: 80px;
+	top: 0px;
+}
+#footer #pre{
+	left: 0px;
+	background: url(../subjectimgs/btnline.png) no-repeat 100%;
+}
+#footer #next{
+	right: 0px;
+	background: url(../subjectimgs/btnline.png) no-repeat;
+}
+#footer #pre #btnPre{
+	position: absolute;
+	height: 44px;
+	width: 80px;
+	background: url(../subjectimgs/btnPre.png) no-repeat;
+	background-size: 80px 40px;
+}
+#footer #pre #btnPre:active{
+	background-color: #5fa109;
+}
+#footer #next #btnNext{
+	position: absolute;
+	height: 44px;
+	width: 80px;
+	background: url(../subjectimgs/btnNext.png) no-repeat;
+	background-size: 80px 40px;
+}
+#footer #next #btnNext:active{
+	background-color: #5fa109;
+}
+#footer #next #btnSubmit{
+	position: absolute;
+	height: 44px;
+	width: 80px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+#footer #next #btnSubmit:active{
+	background-color: #5fa109;
+}
+
+#footer #labPage{
+	position: absolute;
+	height: 44px;
+	line-height: 44px;
+	left: 80px;
+	right: 80px;
+	text-align: center;
+	font-size: 18px;
+	color: #3d6806;
+}
+#footer #btnCheck{
+	display: block;
+	position: absolute;
+	height: 44px;
+	line-height: 44px;
+	left: 80px;
+	right: 80px;
+	text-align: center;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bolder;
+	background-color: #6bb30f;
+}
+#footer #btnCheck:active{
+	background-color: #5fa109;
+}
+
+
+
+
+/***** 动画 *****/
+/* 习题翻页动画 */
+@-webkit-keyframes pageToLeft
+{
+	from {
+		left: 320px;
+		-webkit-opacity: 0;
+	}
+	to {
+		left: 0px;
+		-webkit-opacity: 1;
+	}
+}
+@-webkit-keyframes pageToRight
+{
+	from {
+		left: -320px;
+		-webkit-opacity: 0;
+	}
+	to {
+		left: 0px;
+		-webkit-opacity: 1;
+	}
+}
+.nextPage{
+	-webkit-animation: pageToLeft 0.5s ease-out;
+}
+.prePage{
+	-webkit-animation: pageToRight 0.5s ease-out;
+}
+
+

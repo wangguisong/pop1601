@@ -1,0 +1,686 @@
+/* 题干 */
+.stem{
+	font-size: 20px;
+	color: #666666;
+	font-weight: bolder;
+	font-family: times "微软雅黑";
+	padding: 10px 10px 0px 10px;
+}
+/*解析*/
+.showAny{
+	font-size: 16px;
+	color: #333333;
+	font-family: times "微软雅黑";
+	line-height: 44px;
+	background: #ebebeb;
+	border-bottom: 1px solid #d7d7d7;
+	border-top: 1px solid #d7d7d7;
+	margin: 10px auto 30px auto;
+}
+/** 完型填空-点击框 **/
+.clozeBlank{
+	display: inline-block;
+	min-width: 40px;
+	height: 36px;
+	line-height: 38px;
+	text-align: center;
+	font-size: 24px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	margin: 0px;
+	padding: 0px 10px 0px 0px;
+	border-bottom: solid 3px #96c745;
+	background: url(../subjectimgs/clozeDown.png) no-repeat 100% 70%;
+}
+.clozeBlankNormal{
+	background: none;
+}
+.clozeBlankSelect{
+	border-bottom: solid 3px #27c1bc;
+	background: url(../subjectimgs/clozeUp.png) no-repeat 100% 70%;
+}
+.clozeBlankWrong{
+	color: #fb7575;
+	border-bottom: solid 3px #fb7575;
+	background: none;
+}
+.clozeBlankRight{
+	color: #96c745;
+	border-bottom: solid 3px #96c745;
+	background: none;
+}
+
+/** 完型填空-下拉菜单容器 **/
+.clozeMenu{
+	position: absolute;
+	top: 0px;
+	min-width: 150px;
+	max-width: 300px;
+	max-height: 320px;
+	overflow: auto;
+	padding-bottom: 45px;
+}
+
+/** 显示正确答案的div **/
+.judage{
+	min-height: 56px;
+	line-height: 56px;
+	background: #FFFFFF;
+	border: solid 1px #dddddd;
+	margin-top: 10px;
+	font-size: 24px;
+	font-family: times "微软雅黑";
+	color: #96c745;
+	text-align: center;
+	padding: 0px 10px;
+}
+
+/* 挖空题-题目（中文释义） */
+.wordContent{
+	font-size: 26px;
+	color: #888888;
+	margin-top: 60px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-family: times "微软雅黑";
+}
+
+/* 挖空题-问题（带空的英文单词） */
+.wordSubContent{
+	font-size: 36px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+/* 挖空题-输入框 */
+.wordInput{
+	outline: none;
+	font-size: 36px;
+	font-family: times "微软雅黑";
+	text-align: center;
+	width: 20px;
+	margin: 0px 2px;
+	padding: 0px;
+	background: none;
+	border: none;
+	border-radius: 0px;
+}
+.wordInputNormal{
+	color: #666666;
+	border-bottom: solid 3px #96c745;
+}
+.wordInputRight{
+	color: #96c745;
+	border-bottom: solid 3px #96c745;
+}
+.wordInputWrong{
+	color: #fb7575;
+	border-bottom: solid 3px #fb7575;
+}
+
+/* 填单词补全句子-问题（带单词空的英文句子） */
+.sentenceSubContent{
+	font-size: 24px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	line-height: 40px;
+	padding: 20px 10px 0px 10px;
+}
+/* 填单词补全句子-文本框 */
+.sentanceInput{
+	outline: none;
+	font-size: 24px;
+	font-family: times "微软雅黑";
+	text-align: center;
+	width: 60px;
+	margin: 0px 2px;
+	padding: 0px;
+	background: none;
+	border: none;
+	border-radius: 0px;
+	color: #666666;
+	border-bottom: solid 3px #96c745;
+}
+.sentanceInputRight{
+	color: #96c745;
+}
+.sentanceInputWrong{
+	color: #fb7575;
+	border-bottom: solid 3px #fb7575;
+}
+/* 输入句子题-可编辑div */
+.sentenceArea{
+	font-size: 24px;
+	font-family: times "微软雅黑";
+	color: #666666;
+	border: solid 2px #96c745;
+	outline: none;
+	padding: 0px 5px;
+	border-radius: 5px;
+	-webkit-user-select: auto;
+	min-height: 40px;
+}
+.sentenceAreaWrong{
+	color: #fb7575;
+	border: solid 2px #fb7575;
+}
+.sentenceAreaRight{
+	color: #96c745;
+}
+
+/* 选择题-阅读文本 */
+.choose_artice{
+	font-size: 24px;
+	color: #888888;
+	padding: 10px 10px 0px 10px;
+	font-family: times "微软雅黑";
+}
+.choose_question{
+	font-size: 24px;
+	color: #666666;
+	padding: 10px 10px 0px 10px;
+	font-family: times "微软雅黑";
+}
+.choose_question span{
+	color: #96c745;
+}
+.choose_image{
+	width: 140px;
+	height: 100px;
+	margin: 10px auto 20px auto;
+	padding: 5px;
+	border: solid 1px #EEEEEE;
+}
+.choose_image img{
+	background: #f2f1ed;
+}
+.choose_optiondiv{
+	padding: 10px 10px 0px 10px;
+	
+}
+.choose_option_text{
+	min-height: 48px;
+	line-height: 48px;
+	font-family: times "微软雅黑";
+	font-size: 26px;
+	border: solid 1px #dddddd;
+	border-radius: 3px;
+	position: relative;
+}
+.choose_option_text_normal{
+	color: #666666;
+	background: url(../subjectimgs/whiteline.png) repeat-x #f2f0ec;
+}
+.choose_option_text_select{
+	color: #FFFFFF;
+	background: #27c1bc;
+	border: solid 1px #27c1bc;
+}
+.choose_option_text_right{
+	color: #FFFFFF;
+	background: #89be23;
+}
+.choose_option_text_wrong{
+	color: #FFFFFF;
+	background: #f15959;
+}
+
+.choose_option_text .label{
+	position: absolute;
+	width: 40px;
+	text-align: center;
+	border: none;
+	background: none;
+	top: 0px;
+	left: 0px;
+}
+.choose_option_text .content{
+	border: none;
+	background: none;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.choose_option_text .icon{
+	position: absolute;
+	width: 40px;
+	border: none;
+	text-align: center;
+	background: none;
+	top: 0px;
+	right: 0px;
+}
+
+.choose_option_img{
+	width: 140px;
+	height: 100px;
+	float: left;
+	margin-right: 1px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.choose_option_img .icon{
+	position: absolute;
+	top: -5px;
+	left: -5px;
+}
+.choose_option_img_normal{
+	border: solid 4px #e1e1e1;
+}
+.choose_option_img_select{
+	border: solid 4px #27c1bc;
+}
+.choose_option_img_right{
+	border: solid 4px #89be23;
+}
+.choose_option_img_wrong{
+	border: solid 4px #f15959;
+}
+
+/** 快速拖拽-点击框 **/
+.clickBlank{
+	display: inline-block;
+	min-width: 50px;
+	height: 36px;
+	text-align: center;
+	font-family: times "微软雅黑";
+	margin: 0px 2px;
+	border-bottom: solid 3px #96c745;
+}
+.clickBlankSelect{
+	color: #27c1bc;
+	border-bottom: solid 3px #27c1bc;
+}
+.clickBlankWrong{
+	color: #f15959;
+	border-bottom: solid 3px #f15959;
+}
+.clickBlankRight{
+	color: #96c745;
+}
+/* 款速拖拽-选项框 */
+.clickCon{
+	position: relative;
+	border: solid 1px #dddddd;
+	background: #f2f2f2;
+	min-height: 50px;
+	margin-top: 30px;
+	text-align: center;
+}
+.clickCon hr{
+	position: absolute;
+	left: -2px;
+	right: 0px;
+	top: 0px;
+	margin: 0;
+	border-top: solid 1px #ffffff;
+}
+.clickCon .item{
+	padding: 0px 10px;
+	font-size: 24px;
+	color: #666666;
+	background: #89be23;
+	font-family: times "微软雅黑";
+	margin: 10px 5px 10px;
+	border-radius: 10px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+}
+.clickCon .itemSelect{
+	color: #FFFFFF;
+	background: #27c1bc;
+}
+/*跟我读*/
+.readingPanel{
+	border-bottom:1px solid #dedcdc ;
+	border-radius:10px ;
+	background: #ffffff;
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 5px;
+}
+.readContent{
+	width: 80%;
+	float: left;
+	font-size: 24px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	line-height: 40px;
+}
+.audioBtn{
+	float: right;
+	width: 53px;
+	height: 53px;
+}
+.play{
+	width: 53px;
+	height: 53px;
+	background: url(../img/read-play.png) no-repeat;
+	cursor: pointer;
+}
+.pause{
+	width: 53px;
+	height: 53px;
+	background: url(../img/read-pause.png) no-repeat;
+	cursor: pointer;
+}
+.playAllPanel{
+	width: 156px;
+	height: 53px;
+	line-height: 53px;
+	border-radius: 50px;
+	border-bottom: 1px solid #dedcdc;
+	background: #FFFFFF;
+	margin-top:10px;
+	margin-left: 10px;
+}
+
+.againSe{
+	background: #fff1ca;
+}
+.playBtn{
+	width: 53px;
+	height: 53px;
+	float: left;
+}
+.pauseBtn{
+	width: 53px;
+	height: 53px;
+	float: left;
+}
+.playAllPanel .playText{
+	width: 103px;
+	height: 53px;
+	float: left;
+	font-size: 20px;
+	font-family: times "微软雅黑";
+	color: #f29549;
+}
+
+/*  跟我读   再练一遍*/
+.againDiv{
+	width:267px;
+	height: 99px;
+	margin: 73px auto 0px auto;
+	position: relative;
+	border-radius: 10px;
+	background: #89be23;
+	z-index: 10;
+	text-align: center;
+	font-family: times "微软雅黑";
+	font-size:18px;
+}
+
+.againDiv h2{
+	display: block;
+	width: 247px;
+	height:48px;
+	line-height: 48px;
+	margin: 0 auto;
+	border-bottom: 1px solid #66a406;
+	color: #ffffff;
+	font-weight: 900;
+}
+.againDiv p{
+	display: block;
+	width: 247px;
+	height: 48px;
+	line-height: 48px;
+	margin: 0 auto;
+	font-size:25px;
+	color:#5b9500;
+	font-weight: 900;
+	border-top:1px solid #90c826;
+}
+.againImg{
+	width: 87px;
+	height: 106px;
+	background: url(../img/readImg.png) no-repeat;
+	position: absolute;
+	z-index: 1;
+	right: 0px;
+	top:-68px;	
+}
+
+/* 听声音写单词 */
+.chnDiv{
+	width:320px;
+	text-align: center;
+	margin: 30px auto;
+	font-size: 20px;
+	color: #666666;
+	font-family: times "微软雅黑";
+}
+
+/*单词闪卡*/
+.flash_img{
+	width: 140px;
+	height: 100px;
+	margin-right: 1px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.marginAuto{
+	margin: 20px   auto;
+}
+.wordDiv{
+	width: 100%;
+	height: 72px;
+	background: #f2f0ec;
+	border-bottom: 1px solid #dddcdc;
+	border-top: 1px solid #dddcdc;
+	text-align: center;
+	font-size: 24px;
+	font-family:times "微软雅黑";
+	line-height: 72px;
+	position: relative;
+}
+.wordDiv .soundBtn{
+	width: 53px;
+	height: 53px;
+	position: absolute;
+	right: 10px;
+	top:10px ;
+}
+.list{
+	width: 52px;
+	height: 40px;
+	background: url(../img/soundList.png) no-repeat;
+	position: absolute;
+	right: 5px;
+	top:2px;
+}
+.listDiv{
+	width: 100%;
+	background: #FFFFFF;
+	display: none;
+	position:absolute;
+	top:-20px;
+	left: 0px;
+	padding-top: 45px;
+}
+.listDiv li{
+	width: 100%;
+	/*height: 53px;*/
+	line-height: 40px;
+	border-top:1px solid #dddcdc ;
+	background: #f2f0ec;
+	font-size: 20px;
+	font-family:times "微软雅黑";
+}
+.listDiv .engSpan{
+	width: 44%;
+	display: block;
+	/*height: 53px;*/
+	float: left;
+	padding-left: 5px;
+	margin-right: 10px;
+}
+.listDiv .chnSpan{
+	width: 31%;
+	display: block;
+	/*height: 53px;*/
+	float: left;
+	font-size: 14px;
+	word-break: break-all; 
+	word-wrap:break-word;
+}
+.listDiv .close{
+	width: 42px;
+	height: 45px;
+	background: url(../img/closeList.png) no-repeat;
+	position: absolute;
+	right: 0px;
+	top:0px;
+	
+}
+/*角色扮演*/
+.roleStart{
+	width:267px;
+	height: 58px;
+	line-height: 58px;
+	margin: 73px auto 0px auto;
+	position: relative;
+	border-radius: 10px;
+	background: #89be23;
+	z-index: 10;
+	text-align: center;
+	font-family: times "微软雅黑";
+	font-size:18px;
+}
+.roleStart h2{
+	display: block;
+	width: 247px;
+	position: relative;
+	margin: 0 auto;
+	color: #ffffff;
+	font-weight: 900;
+}
+.roleStart .lineDiv{
+	width: 247px;
+	height: 5px;
+	border-bottom: 1px solid #66a406;
+	position: absolute;
+	top:45px;
+	left:0px;
+}
+.playerImg{
+	width: 87px;
+	height: 106px;
+	background: url(../img/readImg.png) no-repeat;
+	position: absolute;
+	z-index: 1;
+	right: 0px;
+	top:-68px;	
+}
+.playerDiv{
+	width: 302px;
+	margin: 20px auto 0px auto;
+}
+.playerDiv li{
+	float: left;
+	width: 140px;
+	height: 90px;
+	border: 5px solid #e1e1e1;
+	background: #FFFFFF;
+	margin-bottom: 10px;
+}
+.playerDiv li img{
+	width: 140px;
+	height: 90px;
+	border: none;
+}
+.playerDiv li.marginL{
+	margin-left: 2px;
+}
+.playerDiv li:hover{
+	border: 5px solid #27c1bc;
+}
+
+.rolePanel{
+	border-bottom:1px solid #dedcdc ;
+	border-radius:10px ;
+	background: #ffffff;
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 5px;
+	position: relative;
+}
+.rolePanel .imgDiv{
+	float: left;
+	width: 56px;
+	height: 56px;
+	border-radius:30px;
+	border: 2px solid #1fb3ae;
+	margin-right: 10px;
+}
+.rolePanel .imgDiv img{
+	width: 56px;
+	height: 56px;
+}
+.rolePanel .roleCon{
+	width: 55%;
+	float: left;
+	/*word-break: break-all; */
+	word-wrap:break-word;
+	font-size: 24px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	line-height: 40px;
+}
+.rolePanel .recordBtn{
+	width: 60px;
+	position: absolute;
+	right: 10px;
+	top:10px ;
+}
+.rolePanel .recordBtn .recordBtnImg{
+	width: 53px;
+	height: 53px;
+}
+.rolePanel .recordBtn p{
+	color: #f29549;
+	font-size: 12px;
+	padding: 0px;
+	margin-left:2px ;
+}
+
+/*单词改错题*/
+.sentenceSubContent .spanSyle{
+	background: #add6ff;
+}
+.sentenceSubContent .spanSyleSe{
+	background: #c1bacd;
+}
+.correctContent{
+	font-size: 36px;
+	color: #666666;
+	font-family: times "微软雅黑";
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+.correctContent .correctInput{
+	outline: none;
+	font-size: 36px;
+	font-family: times "微软雅黑";
+	text-align: center;
+	width: 200px;
+	margin: 0px 2px;
+	padding: 0px;
+	background: none;
+	border: none;
+	border-radius: 0px;
+}
+.correctContent .wordInputNormal{
+	color: #666666;
+	border-bottom: solid 3px #96c745;
+}
+.correctContent .wordInputRight{
+	color: #96c745;
+	border-bottom: solid 3px #96c745;
+}
+.correctContent .wordInputWrong{
+	color: #fb7575;
+	border-bottom: solid 3px #fb7575;
+}

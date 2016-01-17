@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>线上练习</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/solo.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.min.js" ></script>
+<script src="js/jqmd5.js"></script>
+
+<script>
+    var solo = "../solo/solo.html";
+//  var soloU = "http://kidsfile.popnew.cn/2015/05/28/1432784985188/solo/solo.html";
+    var URL = "http://popkids.xdf.cn:80/actionService/gateway";
+    var isIE;
+    function checkIsIE (){
+        var vesion = parseInt($.browser.version);
+        if($.browser.msie && vesion >=8 &&  vesion < 11){
+            isIE = true;
+        }else{
+            isIE = false;
+        }
+    }
+
+    //兼容了ajax在奇葩的IE下无法跨域请求的问题
+    function doAjax(url,vars,callback){
+        var timesec = new Date().getTime();
+        var strVars = createVarsStrByObj(vars);
+        var vurl = url+"?randtime="+timesec+"&"+strVars;
+        if(isIE){
+            xdr = new XDomainRequest();
+            xdr.open("POST", vurl);
+            xdr.send();
+            xdr.onload = function(){
+                if(callback != null){
+                    callback(xdr.responseText);
+                }
+            }
+        }else{
+            $.post(vurl,function(data,status){
+                if(callback != null){
+                    callback(data);
+                }
+            });
+        }
+    }
+
+    //把对象转换为字符串拼接
+    function createVarsStrByObj(obj){
+        var str = "";
+        for(var key in obj){
+            str += key+"="+obj[key]+"&";
+        }
+        str = str.slice(0,str.length-1);
+        return str;
+    }
+
+    function createRequestVars(){
+        //验证相关参数
+        var timeAdd = new Date().getTime() + parseInt(timeOffset);
+        var str = webAppId + appPwd + userID + timeAdd;
+        var md5str = $.md5(str);
+
+        var data = {};
+        data.userId = userID;
+        data.webAppId = webAppId;
+        data.pwd = appPwd;
+        data.time = timeAdd;
+        data.md5 = md5str;
+        return data;
+    }
+
+    function closeWindow(){
+        window.opener=null;
+        window.open('','_self');
+        window.close();
+    }
+
+    function getQuery(para){
+        var reg = new RegExp("(^|&)"+para +"=([^&]*)(&|$)");
+        var r =  window.location.search.substr(1).match(reg);
+        if(r!=null){
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var tempName;
+    var tempEnglish;
+    var gameName;
+    var nodeName;
+    var tempUrl;
+    var testName    
+    var unit;
+    var nodeID;
+    var path;
+    var serverURL;
+    //验证相关参数
+    var userID;
+    var webAppId;
+    var appPwd;
+    var timeOffset;
+    
+    var isWan;
+
+    function init(){
+        checkIsIE();
+        //是否显示关闭按钮
+        var showClose = getQuery("showClose");
+        if(showClose=="0"){
+        	$("#closeBtn").remove();
+        }
+        serverURL = getQuery("pathURL");
+        nodeID = getQuery("nodeId");
+        path = getQuery("path");
+        testName = decodeURIComponent(decodeURIComponent(getQuery("testName")));
+        nodeID = decodeURIComponent(decodeURIComponent(getQuery("nodeId")));
+        //获取认证参数
+        userID = getQuery("userId");
+        webAppId = getQuery("webAppId");
+        appPwd = getQuery("appPwd");
+        timeOffset = getQuery("timeOffset");
+        getWrongData();
+        onResize();
+    }
+    
+    function getWrongData(){
+	    $("#wronginfo a").hide();
+	    var frameDiv = $('<div></div>');
+	    frameDiv.attr("id","wrongDiv");
+	    $("#article").append(frameDiv);
+	    frameDiv.text("正在加载数据……");
+	    $(".content").append(frameDiv);
+	    $("#wronginfo .total").text("--");
+        $("#wronginfo .correct").text("--");
+        $("#wronginfo .wrong").text("--");
+        var data = createRequestVars();
+        data.serviceName = "SwfTestService";
+        data.methodName = "getQuestionNum";
+        data.nodeId = nodeID;
+        doAjax(serverURL,data,function(data){
+            var json = eval("(" + data + ")");
+            if(json.success=="0"){
+               if(json.QuestionNum != undefined){
+	            $("#wronginfo .total").text(json.rightQuestionNum+json.errQuestionNum);
+	            $("#wronginfo .correct").text(json.rightQuestionNum);
+	            $("#wronginfo .wrong").text(json.errQuestionNum);
+	            if(json.errQuestionNum >0){
+	            	$("#wronginfo a").show();
+				    var wrongNodeId = nodeID;
+				    var vars = "&userId="+userID+"&webAppId="+webAppId+"&appPwd="+appPwd+"&timeOffset="+timeOffset;
+				    var wrongShowURL = "http://kidsfile.popnew.cn/2015/03/26/1427334206467/wrongShow/index.html";
+				    var wrongURL = wrongShowURL+"?pathURL="+serverURL+"&nodeId="+wrongNodeId+vars;
+					var frame = $('<IFRAME id="wrongShowFrame" name="wrongShow" frameBorder=0 src="" width="100%" height="100%" ></IFRAME>');
+					frameDiv.empty();
+					frameDiv.append(frame);
+					frame[0].src = wrongURL;
+					//错题再练按钮点击
+                    $("#wronginfo a").click(function(){
+                	  var nodeId = nodeID;
+				      var path = "XXXXXX";
+				      var testname = testName;
+				      var param = "?nodeId="+nodeId+"&testName="+testname+"&path="+path
+	            			+"&pathURL="+URL
+	            			+"&userId="+userID+"&webAppId="+webAppId+"&appPwd="+appPwd+"&timeOffset="+timeOffset;
+				      var soloURL = encodeURI(solo+param);
+				      window.open(encodeURI(soloURL));
+                    });
+	            }else{
+	            	var tipimg;
+	            	if(json.rightQuestionNum>0){
+	            		tipimg = $('<img src="images/verygood.png" />');
+	            	}else{
+	            		tipimg = $('<img src="images/justdoit.png" />');
+	            	}
+	            	frameDiv.text("");
+	            	frameDiv.append(tipimg);
+	            	tipimg.load(function(){
+	            		layoutWrongDiv();
+	            	});
+	            }
+	          }
+            }else{
+               alert(json.message); 
+            }
+        });
+    }
+    
+//  function showPageDetail(){
+//      if(isWan){
+//          $(".mainFrame").css("background-color","#ffffff");
+//          $(".mainFrame").css("border","none");
+//          $(".mainFrame").css("padding","20px 0 0 0");
+//          $("#mainContent").attr("width","1024");
+//          $(".content .main").css("width","1024px");
+//      }
+//      var vars = "&path="+path+"&preview=false&userId="+userID+"&webAppId="+webAppId+"&appPwd="+appPwd+"&timeOffset="+timeOffset;
+//      var param = "?pathURL="+serverURL+"&nodeId="+nodeID+vars;
+//      tempUrl += param;
+//      $("#mainContent").attr("src",tempUrl);
+//  }
+
+    function onResize(){
+        
+//          $(".main").height(0);
+//          $("#mainContent").height(0);
+//          var h = $(document).height() - $(".main").offset().top-20;
+//          if(h < 600){
+//              h = 600;
+//          }
+//          $(".main").height(h-3);
+//          $("#mainContent").height(h-5);
+//          $(".mainFrame").css("background-color","#ffffff");
+//          $(".mainFrame").css("border","none");
+//          $(".mainFrame").css("padding","20px 0 0 0");
+//          $("#mainContent").attr("width","1024");
+//          $(".content .main").css("width","1024px");
+            layoutWrongDiv();
+    }
+function layoutWrongDiv(){
+	var spaceH = $(window).height()-$("#header").height()-5-$("#footer").height();
+	$("#wrongDiv").css("height",spaceH);
+	var img = $("#wrongDiv img");
+	if(img.length>0){
+		var mtop = (spaceH-img.height())/5*2;
+		if(mtop<0) mtop = 0;
+		img.css("margin-top",mtop);
+	}
+}
+
+</script>
+
+</head>
+<body class="bg" onresize="onResize()">
+	<div class="head">
+		<a id="close" href="javascript:void(null)" onclick="closeWindow()"></a>
+		<div class="title">入学考试</div>
+	</div>
+	<div class="content">
+		<div class="title">
+			<div style="width: 1024px; margin: 0 auto; height: 100%; position: relative;">
+				<div id="wronginfo">
+					已做题数:
+					<span class="total"></span>
+					<img src="images/iconRight.png"/>
+					<span class="correct"></span>
+					<img src="images/iconWrong.png" />
+					<span class="wrong"></span>
+					<a>错题再练</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<Script>init();</Script>
+</body>
+</html>

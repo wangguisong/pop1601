@@ -1,0 +1,255 @@
+
+p{
+	margin: 0;
+	padding: 0;
+}
+
+/* 习题基本元素 */
+.text{
+	font-size: 20px;
+	font-family: arial "微软雅黑";
+	color: #666666;
+	padding: 10px;
+	position: relative;
+	/*-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;*/
+}
+
+/* 题干 */
+.text.stem{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+/* 题目 */
+.text.question{
+	font-size: 24px;
+	font-family: arial "Times New Roman";
+}
+/* 题目：选中状态 */
+.text.questionSelect{
+	font-size: 24px;
+	color: #FFFFFF;
+}
+
+/* 正确答案 */
+.text.correct{
+	font-size: 22px;
+	color: #6db10c;
+}
+/* 错误答案 */
+.text.fault{
+	font-size: 22px;
+	color: #e54343;
+}
+/* 解析 */
+.text.explain{
+	font-size: 20px;
+	color: #888888;
+	padding: 10px 20px;
+	border-left: solid 3px #bedaee;
+}
+
+/* 选择题容器 */
+.choiceGroup{
+	position: relative;
+}
+/* 选择题选项 */
+.choiceGroup .choiceItem{
+	margin-bottom: 10px;
+	border-radius: 10px;
+	position: relative;
+	max-width: 500px;
+}
+/* 选择题选项：正常状态 */
+.choiceGroup .choiceItem.normal{
+	cursor: pointer;
+	background: #eeeeee;
+}
+/* 选择题选项：正常状态（经过） */
+.choiceGroup .choiceItem.normal:hover{
+	background: #d4e5f1;
+}
+/* 选择题选项：正常状态（按下） */
+.choiceGroup .choiceItem.normal:active{
+	background: #bedaee;
+}
+/* 选择题选项：选中状态 */
+.choiceGroup .choiceItem.selected{
+	background: #4aa2c6;
+}
+/* 选择题选项：做对状态 */
+.choiceGroup .choiceItem.correct{
+	background: #6db10c;
+}
+/* 选择题选项：做错状态 */
+.choiceGroup .choiceItem.wrong{
+	background: #e54343;
+}
+/* 选择题选项-标签 */
+.choiceGroup .choiceItem .choiceLabel{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+/* 选择题选项-内容 */
+.choiceGroup .choiceItem .choiceText{
+	margin-left: 30px;
+	display: inline-block;
+}
+
+/* 填空题-输入框容器 */
+.blankGroup{
+	
+}
+/* 填空题-输入框 */
+.blankGroup .blank{
+	display: inline-block;
+	border-bottom: solid 2px #6db10c;
+	margin: 0px 2px;
+	min-width: 15px;
+	text-align: center;
+	outline: none;
+	-webkit-user-select: auto;
+	min-width: 30px;
+}
+/* 填空题-输入框：正确 */
+.blankGroup .blank.correct{
+	color: #6db10c;
+}
+/* 填空题-输入框：错误 */
+.blankGroup .blank.wrong{
+	color: #e54343;
+	border-bottom: solid 2px #e54343;
+}
+
+/* 完形填空-容器 */
+.clozeDiv{
+	
+}
+
+/* 完型填空-点击区 */
+.cloze{
+	display: inline-block;
+	min-width: 50px;
+	cursor: pointer;
+	position: relative;
+	padding-right: 15px;
+	border-bottom: solid 2px #6db10c;
+	background: url(../default/clozeDown.png) no-repeat 100%;
+	text-align: center;
+}
+.cloze.correct{
+	background: none;
+	padding-right: 0px;
+}
+.cloze.wrong{
+	background: none;
+	border-bottom: solid 2px #e54343;
+	padding-right: 0px;
+}
+/* 完型填空-点击区：被选中 */
+.cloze.down{
+	border-bottom: solid 2px #27c1bc;
+	background: url(../default/clozeUp.png) no-repeat 100%;
+}
+/* 完型填空-点击区内容 */
+.cloze .content{
+	display: inline;
+}
+.cloze .content.correct{
+	display: inline;
+	color: #6db10c;
+}
+.cloze .content.wrong{
+	display: inline;
+	color: #e54343;
+}
+
+/* 完形填空-选项容器 */
+.cloze .clozeGroup{
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	background: #FFFFFF;
+	border: solid 1px #27c1bc;
+	z-index: 1;
+}
+/* 完形填空-选项 */
+.cloze .clozeGroup .clozeItem{
+	cursor: pointer;
+	background: #eeeeee;
+}
+/* 完型填空-选项（经过） */
+.cloze .clozeGroup .clozeItem:hover{
+	background: #d4e5f1;
+}
+/* 完型填空-选项（按下） */
+.cloze .clozeGroup .clozeItem:active{
+	background: #bedaee;
+}
+
+/* 点击选择题容器 */
+.clickChoice{
+	
+}
+/* 点击选择题-空项 */
+.clickChoice .blank{
+	display: inline-block;
+	border-bottom: solid 2px #6db10c;
+	margin: 0px 2px;
+	min-width: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+.clickChoice .blank:hover{
+	border-bottom: solid 2px #cfc6e0;
+}
+/* 点击选择题-空项：选中 */
+.clickChoice .blank.select{
+	border-bottom: solid 2px #645483;
+}
+/* 点击选择题-空项：正确 */
+.clickChoice .blank.correct{
+	color: #6db10c;
+}
+/* 点击选择题-空项：错误 */
+.clickChoice .blank.wrong{
+	color: #e54343;
+	border-bottom: solid 2px #e54343;
+}
+.clickChoice .clickChoiceOption{
+	background: #f2f3ee;
+	text-align: center;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid 1px #d9d7d7;
+}
+.clickChoice .clickChoiceOption .option{
+	display: inline-block;
+	background: #96c745;
+	border-radius: 15px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.clickChoice .clickChoiceOption .option:hover{
+	background: #cfc6e0;
+}
+.clickChoice .clickChoiceOption .option.select{
+	background: #645483;
+}
+
+/* 主观题 */
+.zhuguan_userinput{
+	border: dashed 1px #99cc33;
+}
+
+.hide{
+	display: none;
+}
+
+
+
+
