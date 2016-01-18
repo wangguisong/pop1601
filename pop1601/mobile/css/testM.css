@@ -213,7 +213,6 @@
 }
 .examItem{
 	height: 80px;
-	width: 100%;
 	line-height: 40px;
 	padding-left: 10px;
 	position: relative;
@@ -282,7 +281,7 @@
 .wrongTopRight{
 	position: absolute;
 	top: 0px;
-	left: 140px;
+	left: 150px;
 	height: 45px;
 	line-height: 45px;
 }
@@ -298,7 +297,7 @@
 .wrongTopWrong{
 	position: absolute;
 	top: 0px;
-	left: 190px;
+	left: 200px;
 	height: 45px;
 	line-height: 45px;
 }
