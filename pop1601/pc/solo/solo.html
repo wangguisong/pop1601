@@ -57,6 +57,24 @@
 	    $('.btnSubmit').click(function(){
 	    		submitExam();
 	    });
+	    $('.btnPrev').mouseover(function(){
+	    		$('.btnPrev img').attr('src', 'images/q_pre_green.png');
+	    });
+	    $('.btnPrev').mouseout(function(){
+	    		$('.btnPrev img').attr('src', 'images/q_prev.png');
+	    });
+	    $('.btnNext').mouseover(function(){
+	    		$('.btnNext img').attr('src', 'images/q_next_green.png');
+	    });
+	    $('.btnNext').mouseout(function(){
+	    		$('.btnNext img').attr('src', 'images/q_next.png');
+	    });
+	    $('.btnSubmit').mouseover(function(){
+	    		$('.btnSubmit img').attr('src', 'images/q_submit_over.png');
+	    });
+	    $('.btnSubmit').mouseout(function(){
+	    		$('.btnSubmit img').attr('src', 'images/q_submit.png');
+	    });
     }
     
     
@@ -65,19 +83,23 @@
    	 	$("#lbCur").text(String(currentPage+1));
    	 	$('#lbTotal').text(pages.length);
 		if(pages.length==1){
+			$('.btnPrevDisable').show();
 			$(".btnPrev").hide();
 			$(".btnNext").hide();
 			$(".btnSubmit").show();
 		}else{
 			if(currentPage==0){
+				$('.btnPrevDisable').show();
 				$(".btnPrev").hide();
 				$(".btnNext").show();
 				$(".btnSubmit").hide();
 			}else if(currentPage==pages.length-1){
+				$('.btnPrevDisable').hide();
 				$(".btnNext").hide();
 				$(".btnPrev").show();
 				$(".btnSubmit").show();
 			}else{
+				$('.btnPrevDisable').hide();
 				$(".btnNext").show();
 				$(".btnPrev").show();
 				$(".btnSubmit").hide();
@@ -87,7 +109,7 @@
 		$("#indicatorContainer").radialIndicator({
 	         barBgColor:'#e9eae4',
 	         barColor: '#aced3e',
-	         barWidth:10,
+	         barWidth:6,
 	         radius:44,
 	         maxValue:pages.length,
 	         minValue:1,
@@ -115,9 +137,10 @@
 		</div>
 		<div class="bottom">
 			<div class="bottomBar">
+				<div class="btnPrevDisable"><img src="images/q_pre_gray.png" />BACK</div>
 				<div class="btnPrev"><img src="images/q_prev.png" />BACK</div>
 				<div class="btnNext"><img src="images/q_next.png" />NEXT</div>
-				<div class="btnSubmit"><img src="images/q_next.png" />SUBMIT</div>
+				<div class="btnSubmit"><img src="images/q_submit.png" />SUBMIT</div>
 				<div style="position: absolute; left: 0;right: 0;top: 0;pointer-events: none;">
 					<div id="indicatorContainer"></div>
 					<div id="lbPage"><span id="lbCur"></span>/<span id="lbTotal"></span></div>

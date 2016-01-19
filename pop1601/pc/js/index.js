@@ -71,6 +71,7 @@ $(window).resize(onResize);
 
 function onResize(){
 	layoutTestDiv();
+	layoutExamItem();
 }
 function layoutTestDiv(){
     allW = $(window).width();
@@ -80,6 +81,30 @@ function layoutTestDiv(){
     $('.examList').height(allH-44);
     $('.schoolList').width(250);
     $('.examList').width(allW-250);
+}
+
+function layoutExamItem(){
+	var maxW = 0;
+	var arr = $('.examName');
+	if(arr && arr.length>0){
+		for(var i=0; i<arr.length; i++){
+			var w = $(arr[i]).width();
+			if(w>maxW){
+				maxW = w;
+			}
+		}
+	}
+	var itemW = $('.examItem').width();
+	var navW = $('.examNav').width();
+	if(maxW<650 && (itemW-navW)>668){
+		$('.examNav').css('left', '668px');
+	}else if(maxW>650 && (itemW-navW)>(maxW+18)){
+		$('.examNav').css('left', (maxW+18)+'px');
+	}else{
+		var nameW = itemW-navW-18;
+		$('.examName').width(nameW);
+		$('.examNav').css('left', (nameW+18)+'px');
+	}
 }
 //获取当前学校的试题列表
 function showTestList(){
@@ -91,10 +116,10 @@ function showTestList(){
 			for(var i=0;i<testArr.length;i++){
 					var li = $('<div class="examItem" id="'+testArr[i][3]+"@#$"+testArr[i][4]+"@#$"+testArr[i][7]
 						+'"><div class="examName">'+[i+1]+"、"+testArr[i][4]
-						+'</div><div class="examArr">>&nbsp;></div>'+
+						+'</div><div class="examNav"><div class="examArr">>&nbsp;></div>'+
 						'<div class="examErCode">扫码考试</div>'+
 						'<div class="examPrint">打印试卷</div>'+
-						'<div class="examMuban">下载分数模板</div>'+'</div>');
+						'<div class="examMuban">下载分数模板</div>'+'</div></div>');
 				    li.click(function(){
 					var node = $(this).attr("id");
 					var nodeId = node.split("@#$")[0];
@@ -105,22 +130,23 @@ function showTestList(){
 	            	var testURL = encodeURI(testUrl+param);		
 					window.open(encodeURI(testURL));
 				});
-				li.children('.examErCode').click(function(evt){
+				li.children('.examNav').children('.examErCode').click(function(evt){
 					var top = evt.pageY-50;
 					var right = 275;
 					showErCodeAlert('asset/erCodeB.png', right, top);
 				 	evt.stopPropagation();
 				});
-				li.children('.examPrint').click(function(evt){
+				li.children('.examNav').children('.examPrint').click(function(evt){
 					showAlert('打印');
 					evt.stopPropagation();
 				})
-				li.children('.examMuban').click(function(evt){
+				li.children('.examNav').children('.examMuban').click(function(evt){
 					showAlert('下载模板');
 					evt.stopPropagation();
 				})
 				$(".examList").append(li);	
 			}
+			layoutExamItem();
 		}else{
 			$(".examList").append('<h3>本学校暂无试题</h3>');
 		}

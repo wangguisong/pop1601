@@ -63,62 +63,66 @@
 	position: absolute;
 	left: 20px;
 	top: 0px;
-	right: 450px;
 	bottom: 0px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.examArr{
+.examNav{
 	position: absolute;
+	top: 0px;
+	left: 650px;
+	width: 480px;
+}
+.examArr{
+	display: inline-block;
 	width: 55px;
 	height: 45px;
 	color: #f7a820;
-	top: 0px;
-	right: 400px;
 }
 .examErCode{
-	position: absolute;
+	display: inline-block;
+	margin-left: 25px;
 	width: 90px;
 	height: 45px;
-	line-height: 45px;
+	line-height: 48px;
 	color: #f5b342;
 	font-size: 14px;
 	padding-left: 25px;
 	background: url(../img/erCodeS.png) no-repeat left center;
 	background-size: 18px 18px;
-	right: 300px;
-	top: 0px;
 }
 .examPrint{
-	position: absolute;
+	display: inline-block;
 	width: 116px;
-	height: 36px;
-	top: 3px;
+	height: 30px;
+	margin-top: 6px;
+	margin-left: -10px;
 	border: solid 1px #f7a820;
 	border-radius: 3px;
-	line-height: 36px;
-	right: 165px;
+	line-height: 30px;
 	color: #ffab1a;
 	font-size: 14px;
 	text-align: center;
+	background-color: white;
 }
 .examPrint:hover{
 	background-color: #f7a820;
 	color: white;
 }
 .examMuban{
-	position: absolute;
+	display: inline-block;
 	width: 116px;
-	height: 36px;
-	top: 3px;
+	height: 30px;
+	margin-top: 6px;
 	border: solid 1px #f7a820;
 	border-radius: 3px;
-	line-height: 36px;
-	right: 35px;
+	line-height: 30px;
+	margin-left: 20px;
 	color: #ffab1a;
 	font-size: 14px;
 	text-align: center;
+	background-color: white;
 }
 .examMuban:hover{
 	background-color: #f7a820;

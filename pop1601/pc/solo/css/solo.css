@@ -47,6 +47,25 @@
 	margin: 0 auto;
 	border-top: solid 1px #bbbbbb;
 }
+.btnPrevDisable{
+	cursor: pointer;
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	width: 50%;
+	max-width: 500px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	background-color: #d9e2e2;
+}
+.btnPrevDisable img{
+	float: left;
+	margin-left: 22px;
+	margin-top: 15px;
+}
 .btnPrev{
 	cursor: pointer;
 	position: absolute;
@@ -66,7 +85,7 @@
 	margin-left: 22px;
 	margin-top: 15px;
 }
-.btnNext, .btnSubmit{
+.btnNext{
 	cursor: pointer;
 	position: absolute;
 	right: 0px;
@@ -80,20 +99,54 @@
 	font-size: 16px;
 	background-color: #21bebe;
 }
-.btnNext img, .btnSubmit img{
+.btnNext img{
 	float: right;
 	margin-right: 22px;
 	margin-top: 15px;
 }
-.btnPrev:hover, .btnNext:hover, .btnSubmit:hover{
-	opacity: .8;
+.btnSubmit{
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	width: 50%;
+	max-width: 500px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	background-color: #f9bf3a;
+}
+.btnSubmit img{
+	float: right;
+	margin-right: 22px;
+	margin-top: 9px;
+}
+.btnPrev:hover{
+	background-color: #8fc13e;
+} 
+.btnPrev:active{
+	background-color: #80b32e;
+}
+.btnNext:hover{
+	background-color: #8fc13e;
+} 
+.btnNext:active{
+	background-color: #80b32e;
+}
+.btnSubmit:hover{
+	background-color: #f7b620;
+}
+.btnSubmit:active{
+	background-color: #e7a300;
 }
 #indicatorContainer{
-	width: 108px;
-	height: 108px;
+	width: 100px;
+	height: 100px;
 	margin: 0 auto;
 	border-radius: 50%;
-	margin-top: -20px;
+	margin-top: -16px;
 }
 #lbPage{
 	width: 88px;
@@ -103,7 +156,7 @@
 	margin-top: -100px;
 	background-color: white;
 	text-align: center;
-	line-height: 98px;
+	line-height: 108px;
 	font-size: 18px;
 	color: #5d6363;
 }
